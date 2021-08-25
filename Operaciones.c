@@ -11,42 +11,77 @@ Terminales y modos que se utilizan: -ejemplo;gpio_5_salida
 // Biblioteca
 #include<stdio.h>
 
+// Estructura main
 int main(){
-	int a=10, c;
-	float b=5, d, suma, resta, mul, div;
+	// Declaración de variables
+	int a=10, opc;
+	float b=5, c, d, suma, resta, mul, div;
 	float sum,rest,mult1,div1;
-	
-	printf("Ingrese un valor entero para a: ");
-	scanf("%d",&c);
-	
-	printf("Ingrese un valor decimal para b: ");
-	scanf("%f",&d);
-		
+
+	// Realización de las operaciones
 	suma=a+b;
 	resta=a-b;
 	mul=a*b;
 	div=a/b;
-
-	sum=c+d;
-	rest=c-d;
-	mult1=c*d;
-	if(d==0){
-		printf("No se puede realizar la operaci%cn",162);
-	} else{
-		div1= c/d;
-	}
 	
+	// Se imprimen los valores de las operaciones
 	printf("\n\tValores de las operaciones para los valores de a=10 y b=5 \n");
 	printf("El valor de la suma es: %1.4f\n",suma);
 	printf("El valor de la resta es: %1.4f\n",resta);
 	printf("El valor de la multiplicación es: %1.4f\n",mul);
 	printf("El valor de la división es: %1.4f\n",div);
+
+	/* Se utiliza un do while para volver a realizar la 
+	   ejecución de las veces que quiera el usuario */
+	do{
+		// Se genera un menú de opciones 
+	printf("\n1. Suma   ");
+	printf("2. Resta   ");
+	printf("3. Multiplicación   ");
+	printf("4. División   ");
+	printf("Elige que operacón quieres realizar:");
+	scanf("%d",&opc);
+
+	// Se piden los datos por consola al usuario
+	printf("\nIngrese un valor entero para c: ");
+	scanf("%f",&c);
+	
+	printf("Ingrese un valor decimal para d: ");
+	scanf("%f",&d);
 	
 	printf("\n\tValores de las operaciones para los valores que se ingresaron \n");
-	printf("El valor de la suma es: %1.4f\n",sum);
-	printf("El valor de la resta es: %1.4f\n",rest);
-	printf("El valor de la multiplicación es: %1.4f\n",mult1);
-	printf("El valor de la división es: %1.4f\n",div1);
+	/* Con la instrucción switch se realiza cada operación de acuerdo con los que 
+	   el usuario haya elegido */
+	switch(opc){
+		case 1:
+			sum=c+d;
+			printf("El valor de la suma es: %1.4f\n",sum);
+			break;
+		case 2:
+			printf("El valor de la resta es: %1.4f\n",rest);
+			rest=c-d;
+			break;
+		case 3:
+			printf("El valor de la multiplicación es: %1.4f\n",mult1);
+			mult1=c*d;
+			break;
+		case 4:
+			if(d==0){
+				printf("No se puede realizar la operación");
+			} else{
+				div1=c/d;
+				printf("El valor de la división es: %1.4f\n",div1);
+			}
+			break;
+		defaul:
+			printf("No se coloco una opción correcta");
+			break;
+	}
+	printf("1. Si");
+	printf("2. No");
+	printf("\n¿Deseas realizar otra vez la operación?");
+	scanf("%d",&opc);
+	}while(opc==5); // Se evalua la opción que eligio el usuario
 
 	return 0;
 }

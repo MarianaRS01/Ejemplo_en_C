@@ -13,12 +13,13 @@ Terminales y modos que se utilizan: -ejemplo;gpio_5_salida
 
 // Fución main
 int main(){
+	// Declaración de variables 
 	int a, i=0;
     
 	printf("Ingrese un número de entre 0-10: ");
 	scanf("%d", &a);
 	
-	// Opción 1
+	// Opción 1 mediante if else
 	if(a==0){
 		printf("Ha seleccionado la opción 0");	
 	}else if(a==1){
@@ -43,12 +44,13 @@ int main(){
 		printf("Ha seleccionado la opción 10");
 	}
 	
-	// Opción 2
+	// Opción 2 utilización de la función while
 	while(i<=10){
 		if(i==a){
 			printf("\nHa seleccionado la opción %d",a);
 		}
-		i=i+1;
+		i=i+1; // Contador para poder cumplir con la condicón del while
 	}
+
 	return 0;
 }
