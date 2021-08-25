@@ -63,8 +63,8 @@ int main(){
 			printf("El valor de la resta es: %1.2f\n",resta1);
 			break;
 		case 3:
-			printf("El valor de la multiplicación es: %1.2f\n",mult1);
 			mult1=c*d;
+			printf("El valor de la multiplicación es: %1.2f\n",mult1);
 			break;
 		case 4:
 			if(d==0){
