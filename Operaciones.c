@@ -16,7 +16,7 @@ int main(){
 	// Declaración de variables
 	int a=10, opc;
 	float b=5, c, d, suma, resta, mul, div;
-	float sum,rest,mult1,div1;
+	float sum,resta1,mult1,div1;
 
 	// Realización de las operaciones
 	suma=a+b;
@@ -26,19 +26,20 @@ int main(){
 	
 	// Se imprimen los valores de las operaciones
 	printf("\n\tValores de las operaciones para los valores de a=10 y b=5 \n");
-	printf("El valor de la suma es: %1.4f\n",suma);
-	printf("El valor de la resta es: %1.4f\n",resta);
-	printf("El valor de la multiplicación es: %1.4f\n",mul);
-	printf("El valor de la división es: %1.4f\n",div);
+	printf("El valor de la suma es: %1.2f\n",suma);
+	printf("El valor de la resta es: %1.2f\n",resta);
+	printf("El valor de la multiplicación es: %1.2f\n",mul);
+	printf("El valor de la división es: %1.2f\n",div);
 
 	/* Se utiliza un do while para volver a realizar la 
 	   ejecución de las veces que quiera el usuario */
 	do{
 		// Se genera un menú de opciones 
-	printf("\n1. Suma   ");
-	printf("2. Resta   ");
-	printf("3. Multiplicación   ");
-	printf("4. División   ");
+	printf("\nMenú de opciones\n");
+	printf("1. Suma\n");
+	printf("2. Resta\n");
+	printf("3. Multiplicación\n");
+	printf("4. División\n");
 	printf("Elige que operacón quieres realizar:");
 	scanf("%d",&opc);
 
@@ -55,14 +56,14 @@ int main(){
 	switch(opc){
 		case 1:
 			sum=c+d;
-			printf("El valor de la suma es: %1.4f\n",sum);
+			printf("El valor de la suma es: %1.2f\n",sum);
 			break;
 		case 2:
-			printf("El valor de la resta es: %1.4f\n",rest);
-			rest=c-d;
+			resta1=c-d;
+			printf("El valor de la resta es: %1.2f\n",resta1);
 			break;
 		case 3:
-			printf("El valor de la multiplicación es: %1.4f\n",mult1);
+			printf("El valor de la multiplicación es: %1.2f\n",mult1);
 			mult1=c*d;
 			break;
 		case 4:
@@ -70,18 +71,18 @@ int main(){
 				printf("No se puede realizar la operación");
 			} else{
 				div1=c/d;
-				printf("El valor de la división es: %1.4f\n",div1);
+				printf("El valor de la división es: %1.2f\n",div1);
 			}
 			break;
 		defaul:
 			printf("No se coloco una opción correcta");
 			break;
 	}
-	printf("1. Si");
+	printf("\n1. Si\n");
 	printf("2. No");
-	printf("\n¿Deseas realizar otra vez la operación?");
+	printf("\n¿Deseas realizar otra vez la operación? ");
 	scanf("%d",&opc);
-	}while(opc==5); // Se evalua la opción que eligio el usuario
+	}while(opc==1); // Se evalua la opción que eligio el usuario
 
 	return 0;
 }
